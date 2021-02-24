@@ -4,4 +4,4 @@ Matrix add input n
 
 execute time
 
-![execution time](/time.jpg)
+![execution time](/times.jpg)
