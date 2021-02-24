@@ -1,6 +1,5 @@
 #include<stdio.h>
 #define N 32
-#define BLOCK_SIZE 32
 
 void add(int *X, int *Y, int *Z) {
 	for(int i = 0; i < N; i++)
@@ -18,14 +17,9 @@ __global__ void add_kernel(int *X, int *Y, int *Z){
 
 int main()
 {
-	int n;
 	cudaEvent_t start, stop;
 	cudaEventCreate(&start);
 	cudaEventCreate(&stop);
-
-
-	printf("Input interger: ");
-	scanf("%d", &n);
 
 	//Input matrix
 	int X[N*N];
@@ -33,7 +27,7 @@ int main()
 
 	for(int i = 0; i < N; i++)
 		for(int j = 0; j < N; j++) {
-			X[i*N+j] = -1;
+			X[i*N+j] = 0;
 			Y[i*N+j] = 1;
 		}
 
